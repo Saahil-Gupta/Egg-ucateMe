@@ -294,6 +294,8 @@ body {
 .login-form {
   display: inline-block;
   padding: 20px;
+  padding-right: 70px;
+  padding-left: 70px;
   background-color: #eef2f5;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -384,6 +386,8 @@ body {
   background: #ffffff;
   padding: 30px;
   border-radius: 8px;
+  padding-right: 70px;
+  padding-left: 70px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -443,7 +447,7 @@ body {
   color: #666;
 }
 /* Поля ввода */
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
   width: 100%; /* Занимает всю ширину контейнера */
   max-width: 300px; /* Ограничение ширины */
   padding: 10px 15px; /* Внутренние отступы */
@@ -460,3 +464,24 @@ input[type="text"]:focus, input[type="password"]:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Лёгкая тень при фокусе */
 }
 
+.password-strength {
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.password-strength.too-short {
+  color: red;
+}
+
+.password-strength.weak {
+  color: orange;
+}
+
+.password-strength.moderate {
+  color: #ffcc00;
+}
+
+.password-strength.strong {
+  color: green;
+}

@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../App.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import GoogleButton from 'react-google-button'
+import GoogleButton from 'react-google-button';
 
 export default function LandingPage() {
   const quotes = [
@@ -14,7 +12,6 @@ export default function LandingPage() {
   ];
 
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-  const [showButtons, setShowButtons] = useState(false);
   const navigate = useNavigate(); // For navigation
 
   useEffect(() => {
@@ -40,32 +37,12 @@ export default function LandingPage() {
         {quotes[currentQuoteIndex]}
       </h2>
       <div className="button-container">
-        {showButtons ? (
-          <>
-            <div className="row">
-              <button className="button" onClick={() => navigate("/login")}>
-                Login
-              </button>
-              <button className="button" onClick={() => navigate("/login")}>
-                Sign up
-              </button>
-            </div>
-            {/* <button className="google-button">
-              <FontAwesomeIcon icon={faGoogle} className="google-icon" />
-              Sign In with Google
-            </button> */}
-            <GoogleButton
-  onClick={() => { console.log('Google button clicked') }}
-/>
-          </>
-        ) : (
-          <button
-            className="get-started-btn"
-            onClick={() => setShowButtons(true)}
-          >
-            Get Started
-          </button>
-        )}
+        <button
+          className="get-started-btn"
+          onClick={() => navigate("/login")} // Navigate to the login page
+        >
+          Get Started
+        </button>
       </div>
     </div>
   );
