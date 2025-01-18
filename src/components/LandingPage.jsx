@@ -25,7 +25,6 @@ export default function LandingPage() {
         <img className="landing-page-logo" src={logo} alt="Logo" />
       </div>
       <h1 className="title">Hackville</h1>
-      {/* Use the `key` attribute to re-trigger animation */}
       <h2
         key={currentQuoteIndex}
         className="typewriter"
