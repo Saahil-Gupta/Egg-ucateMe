@@ -1,10 +1,22 @@
-
-* {
+#root {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  text-align: center;
+  padding:0;
+  width:100%;
 }
 
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 
 @keyframes logo-spin {
   from {
@@ -21,37 +33,16 @@
   }
 }
 
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
 .navbar {
-  position: fixed;
+  height: 80px;
   width: 100%;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #33333317;
-  color: white;
-}
-
-.logo {
-  height: 40px;
-  width: auto;
-}
-
-.navbar-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-button {
-  padding: 8px 12px;
-  background-color: #555;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.nav-button:hover {
-  background-color: #777;
+  background-color: #83A0B6;
 }
