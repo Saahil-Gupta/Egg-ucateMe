@@ -11,18 +11,44 @@ export default function CreateAccountPage() {
   });
 
   const [error, setError] = useState(""); // State for inline error
+  const [strength, setStrength] = useState(""); // Password strength feedback
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    if (name === "password") {
+      updatePasswordStrength(value);
+    }
+  };
+
+  const updatePasswordStrength = (password) => {
+    if (password.length < 6) {
+      setStrength("Too short");
+    } else if (password.length < 8) {
+      setStrength("Weak");
+    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
+      setStrength("Moderate");
+    } else if (/[\W_]/.test(password)) {
+      setStrength("Strong");
+    } else {
+      setStrength("");
+    }
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match"); // Show inline error
+
+    if (formData.password.length < 6) {
+      setError("Password must be at least 6 characters long");
       return;
     }
+
+    if (formData.password !== formData.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+
     setError(""); // Clear error on success
     console.log("Form data:", formData);
     alert(`Account created successfully for ${formData.username}`);
@@ -73,6 +99,9 @@ export default function CreateAccountPage() {
               required
             />
           </label>
+          <p className={`password-strength ${strength.toLowerCase()}`}>
+            Password strength: {strength}
+          </p>
           <label>
             <input
               type="password"

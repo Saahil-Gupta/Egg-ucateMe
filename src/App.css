@@ -463,3 +463,24 @@ input[type="text"]:focus, input[type="password"]:focus {
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Лёгкая тень при фокусе */
 }
 
+.password-strength {
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.password-strength.too-short {
+  color: red;
+}
+
+.password-strength.weak {
+  color: orange;
+}
+
+.password-strength.moderate {
+  color: #ffcc00;
+}
+
+.password-strength.strong {
+  color: green;
+}
