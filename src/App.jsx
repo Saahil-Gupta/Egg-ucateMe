@@ -7,7 +7,7 @@ import LandingPage from "./components/LandingPage"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./components/LoginPage.jsx"; // Import LoginPage
 import CreateAccountPage from "./components/CreateAccountPage.jsx";
-
+import GetStarted from "./components/GetStarted.jsx";
 export default function App() {
   return (
     <Router>
