@@ -45,4 +45,47 @@
   height: 80px;
   width: 100%;
   background-color: #83A0B6;
+  margin-bottom: 10px;
+}
+
+.landing-page-logo-container {
+  height: 250px;
+}
+
+.landing-page-logo {
+  height: 100%;
+}
+
+.title {
+  font-weight: bold;
+  background: linear-gradient(90deg, white, #83A0B6);
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  -webkit-text-fill-color: transparent;
+}
+
+.typewriter {
+  display: inline-block; /* Keeps text inline */
+  overflow: hidden; /* Hides overflowing text for typewriter effect */
+  white-space: nowrap; /* Prevents text from wrapping */
+  font-family: "Courier New", Courier, monospace; /* Typewriter-like font */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  border-right: 2px solid #83A0B6; /* Blinking cursor effect */
+  animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+}
+
+/* Typing effect animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%; /* Full width of text */
+  }
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+    border-color: transparent; /* Makes the cursor blink */
+  }
 }
