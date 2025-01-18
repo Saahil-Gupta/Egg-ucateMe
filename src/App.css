@@ -46,6 +46,19 @@
   width: 100%;
   background-color: #83A0B6;
   margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.navbar-items {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button {
+  background-color: transparent;
+  color:white;
 }
 
 .landing-page-logo-container {
@@ -90,4 +103,31 @@
   50% {
     border-color: transparent; 
   }
+}
+
+.get-started-component-wrapper {
+  display: flex;
+  justify-content: center; /* Horizontally center the box */
+  align-items: center; /* Vertically center the box */
+  margin-top: 0;
+}
+
+
+.get-started-component {
+  background-color: #83A0B6;
+  border-radius: 20px;
+  height: 400px;
+  width: 500px;
+}
+
+.header-subtitle {
+  color:white;
+}
+
+.upload-component {
+  height: 200px;
+  width: 400px;
+  display:flex;
+  background-color: #f5f5f5;
+  align-items: center;
 }
