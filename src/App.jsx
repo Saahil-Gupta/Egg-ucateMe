@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
+        <Route path="/get-started" element={<GetStarted />} />
       </Routes>
     </Router>
   );

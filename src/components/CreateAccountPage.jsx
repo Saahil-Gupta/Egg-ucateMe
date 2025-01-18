@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "../App.css";
 
@@ -10,8 +11,9 @@ export default function CreateAccountPage() {
     confirmPassword: "",
   });
 
-  const [error, setError] = useState(""); // State for inline error
+  const [error, setError] = useState(""); // For error messages
   const [strength, setStrength] = useState(""); // Password strength feedback
+  const navigate = useNavigate(); // React Router navigation
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,12 +29,10 @@ export default function CreateAccountPage() {
       setStrength("Too short");
     } else if (password.length < 8) {
       setStrength("Weak");
-    } else if (/^[a-zA-Z0-9]*$/.test(password)) {
-      setStrength("Moderate");
-    } else if (/[\W_]/.test(password)) {
+    } else if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)) {
       setStrength("Strong");
     } else {
-      setStrength("");
+      setStrength("Moderate");
     }
   };
 
@@ -49,15 +49,17 @@ export default function CreateAccountPage() {
       return;
     }
 
-    setError(""); // Clear error on success
+    setError(""); // Clear error
     console.log("Form data:", formData);
     alert(`Account created successfully for ${formData.username}`);
-    // Add logic to send data to a server or Firebase here
+
+    // Redirect to GetStarted page
+    navigate("/get-started");
   };
 
   return (
     <div className="login-container">
-      {/* Header container for the title and logo */}
+      {/* Header container for title and logo */}
       <div className="header-container">
         <h1>Create Account</h1>
         <div className="logo-container">
