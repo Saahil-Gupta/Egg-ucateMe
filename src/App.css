@@ -1,5 +1,5 @@
 #root {
-  margin: 0;
+  margin-top: -35px;
   text-align: center;
   padding:0;
   width:100%;
@@ -49,7 +49,7 @@
 }
 
 .landing-page-logo-container {
-  height: 250px;
+  height: 220px;
 }
 
 .landing-page-logo {
@@ -61,6 +61,7 @@
   background: linear-gradient(90deg, white, #83A0B6);
   -webkit-background-clip: text; /* Clip the gradient to the text */
   -webkit-text-fill-color: transparent;
+  margin-bottom: 9px;
 }
 
 .typewriter {
@@ -90,4 +91,72 @@
   50% {
     border-color: transparent; 
   }
+}
+
+/* Get Started Button */
+.get-started-btn {
+  background-color: #83a0b6;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 20px auto;
+  margin-bottom: 50px;
+}
+
+.get-started-btn:hover {
+  background-color: #6d8ea3;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #83a0b6;
+  color: white;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #6d8ea3;
+}
+
+.google-button {
+  margin-top: 10px;
+  padding: 15px 50px; /* Adjusted for consistency with other buttons */
+  font-size: 18px; /* Ensures the text size matches other buttons */
+  background-color: #83a0b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex; /* Center icon and text */
+  align-items: center; /* Center icon and text vertically */
+  justify-content: center; /* Center everything horizontally */
+}
+
+.google-button:hover {
+  background-color: #6d8ea3;
+}
+
+body {
+  overflow-y:initial
 }
