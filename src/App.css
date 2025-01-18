@@ -64,28 +64,30 @@
 }
 
 .typewriter {
-  display: inline-block; /* Keeps text inline */
-  overflow: hidden; /* Hides overflowing text for typewriter effect */
-  white-space: nowrap; /* Prevents text from wrapping */
-  font-family: "Courier New", Courier, monospace; /* Typewriter-like font */
-  font-size: 1.5rem; /* Adjust font size as needed */
-  border-right: 2px solid #83A0B6; /* Blinking cursor effect */
-  animation: typing 3s steps(30, end), blink 0.5s step-end infinite;
+  display: inline-block; 
+  overflow: hidden; 
+  white-space: nowrap; 
+  font-family: "Courier New", Courier, monospace; 
+  font-size: 1.5rem; 
+  border-right: 2px solid #83A0B6; 
+  animation: typing 3s steps(var(--characters), end), blink 0.5s step-end infinite;
+  width: auto; 
+  max-width: calc(var(--characters) * 1ch); 
 }
 
 /* Typing effect animation */
 @keyframes typing {
   from {
-    width: 0;
+    width: 0; 
   }
   to {
-    width: 100%; /* Full width of text */
+    width: calc(var(--characters) * 1ch); 
   }
 }
 
 /* Blinking cursor effect */
 @keyframes blink {
   50% {
-    border-color: transparent; /* Makes the cursor blink */
+    border-color: transparent; 
   }
 }
