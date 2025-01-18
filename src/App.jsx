@@ -6,19 +6,6 @@ import axios from "axios"
 import LandingPage from "./components/LandingPage"
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [message, setMessage] = useState('')
-  
-  useEffect(() => {
-    axios.get('/api/hello')
-        .then(response => {
-            setMessage(response.data.message);
-        })
-        .catch(error => {
-            console.error('Error fetching data:', error);
-        });
-  }, []);
-
   return (
     <>
       <LandingPage />
