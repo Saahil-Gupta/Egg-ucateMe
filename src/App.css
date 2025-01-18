@@ -1,8 +1,8 @@
 #root {
-  margin-top: -35px;
   text-align: center;
   padding:0;
   width:100%;
+  background-color: #EFEFEF;
 }
 
 .logo {
@@ -46,6 +46,19 @@
   width: 100%;
   background-color: #83A0B6;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.navbar-items {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-button {
+  background-color: transparent;
+  color:white;
 }
 
 .landing-page-logo-container {
@@ -92,6 +105,116 @@
     border-color: transparent; 
   }
 }
+
+.get-started-component-wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 0;
+}
+
+
+.get-started-component {
+  background-color: #83A0B6;
+  border-radius: 20px;
+  height: 300px;
+  width: 500px;
+}
+
+.header-subtitle {
+  color:white;
+}
+
+.upload-component-wrapper {
+  display:flex;
+  justify-content: center;
+}
+.upload-component {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  height: 150px;
+  width: 400px;
+  display:flex;
+  background-color: #EFEFEF;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.image-button {
+  width: 300px; 
+  height: 65px; 
+  padding: 0; 
+  border: none; 
+  background: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+
+.get-started-component-wrapper {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 0;
+}
+
+
+.get-started-component {
+  background-color: #83A0B6;
+  border-radius: 20px;
+  height: 300px;
+  width: 500px;
+}
+
+.header-subtitle {
+  color:white;
+}
+
+.upload-component-wrapper {
+  display:flex;
+  justify-content: center;
+}
+.upload-component {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  height: 150px;
+  width: 400px;
+  display:flex;
+  background-color: #EFEFEF;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.image-button {
+  width: 300px; 
+  height: 65px; 
+  padding: 0; 
+  border: none; 
+  background: none; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.image-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
 
 /* Get Started Button */
 .get-started-btn {
