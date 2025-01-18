@@ -3,6 +3,14 @@ import slides_button from "../assets/import_slides_button.png"
 import videos_button from "../assets/import_videos_button.png"
 
 export default function GetStarted(props) {
+    const handleButtonClick = () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.click();
+    
+      };
+
+      
     return (
         <>
             <Navigation />
@@ -13,10 +21,10 @@ export default function GetStarted(props) {
                     <div className="upload-component-wrapper">
                         <div className="upload-component">
                             <button className="image-button">
-                                <img src={slides_button} alt="pdfIcon" />
+                                <img onClick={handleButtonClick} src={slides_button} alt="pdfIcon" />
                                 </button>
                             <button className="image-button">
-                                <img src={videos_button} alt="videoIcon" />
+                                <img onClick={handleButtonClick} src={videos_button} alt="videoIcon" />
                                 </button>
                         </div>
                     </div>
