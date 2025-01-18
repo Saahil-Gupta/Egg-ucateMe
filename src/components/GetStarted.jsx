@@ -2,6 +2,8 @@ import Navigation from "./Navigation"
 import slides_button from "../assets/import_slides_button.png"
 import videos_button from "../assets/import_videos_button.png"
 import {useState, useRef} from "react"
+import axios from "axios";
+
 
 export default function GetStarted(props) {
     const fileInputRef = useRef(null);
@@ -15,21 +17,20 @@ export default function GetStarted(props) {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         if (file) {
-        // Upload the file to the server
-        const formData = new FormData();
-        formData.append("file", file);
-
-        axios
-            .post("/audio_video", formData, {
-            headers: { "Content-Type": "multipart/form-data" },
-            })
-            .then((response) => {
-            setMessage("File uploaded successfully!");
-            })
-            .catch((error) => {
-            console.error("Error uploading file:", error);
-            setMessage("Failed to upload file.");
-            });
+            const formData = new FormData();
+            formData.append("file", file);
+    
+            axios
+                .post("http://127.0.0.1:5000/audio_video", formData, {
+                    headers: { "Content-Type": "multipart/form-data" },
+                })
+                .then((response) => {
+                    setMessage(`Upload successful! Summary: ${response.data.summary}`);
+                })
+                .catch((error) => {
+                    console.error("Error uploading file:", error);
+                    setMessage("Failed to upload file.");
+                });
         }
     };
 
@@ -37,7 +38,7 @@ export default function GetStarted(props) {
     return (
         <>
             <Navigation />
-            <h1 className="get-started">Get Started</h1>
+            <h1 className="get-started  ">Get Started</h1>
             <div className="get-started-component-wrapper">
                 <div className="get-started-component">
                     <h2 className="header-subtitle">What do you need to learn?</h2>

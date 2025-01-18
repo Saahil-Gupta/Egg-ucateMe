@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "hackville2025",
+  "private_key_id": "1e8d3a381847b6b7460eb738b6c68d13ebaa8e30",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCyr5yvv75umaMe\nCWh10JXkU2Rs8uKsKa2am4OpoeOru+HgBFWDsxj4guef4OCYczpXAS25K0hsWsLx\nhZpAP/xMmnq9xt+QnvYTvt2of8dNHcafisNAdLDCl/t3fniLk1DYaXfmTLFxzQ55\nWvkkiEGi79d5uaTtrV9X4IYyCwQktAQ6zwWD7wmRIfOAf+zdNBe5GCao7phMIuRp\nhFC9sA1czF8MavCWwuug63P3OAcqLKWi/kf+dJjyO415NTQInroSi7P7UUFi5DSJ\niHBLxcH1hkZ/Qhmxgh2ukliqoWVOfX/BVtLghQpd2Y/g3xm7yykkEzkd41RXF8Vb\nQeNWwOmzAgMBAAECggEABvbgmi+qAhuLh68sMB4EyZUVKUiU3HWfZj2WIHVxLzoF\nGrsbLiU73ZZp5V8EF00JGBJcBYc8rQ8jNqX+FhpTAMAAoAbxTcIJq0lZev4dTCco\nnQKb4OuWEW+PsIpFs9hLuAjxpbtAK0RSbRkbns3kvloEwaIiXdUlDdgawuE6Xx0d\nnjkAJy4yP9H7etHY0C/0GzbwO+Mz86rG1HJq2yuoQp8PL4hCN44omgv1SIffED0u\nvKSi9hgJssQeqmEq4LP0oj74GX6iUun3ODL8lmIwJLvPh+jspzNIJNvC6ib57dlm\nfkaxEpdXIgXWF3AYp3SAXa2SvCTpp0gbNk0d8ZqFAQKBgQDv4E2GoZ+GoYTikiUB\nI7v8FhGunVhHKLIai3kPMbUYJeIFotcmq/eSYygDw7ujmMRIjBXHvR9ZiHXQ7oDu\n9czpR2VgXFocYn62NvyWTgrFXK0/AJaAaeERy3TYVyydtZZsL6xr6bQbggE5pFys\ncyjpRkAJsTmWvMlj1PhOOzNEgQKBgQC+sl8unyB/bTOi1yvR5bC8vkf4FFRaifYZ\nwVKETWx/3DdOOn7M+dLIXeDnYfksIl7g3YKujSJbGBOQy4fyK2yOy0GegctMiMT1\nRO3KJwLK/r6ca0gn2X3mn74DOXFdLd24s0E8CnOe6YMA0eNVCqXO/6ww46lkuEvt\nF74/4VhEMwKBgHvv0359IVRJPcRmqBHnqaf8qxQiHcteXm9SorDUCPI6GIa69Rj4\n/wg2jSUsy1UiiD/HiTVTJNB4rg7OO/W7MC1TgzB/ZtuFlFyHGoh6OBxy3txPbHNa\nwTwVeACTQe0WNmsdUqPK8xDHYeSrZGqBcaDdeBbJ56xXTGJ1VfntonaBAoGAGF9D\nuvmrdZ3HU7CccR8iD31iRVqTzV6EjZYfrbkXfN/wUZc4TYpAXkthSzFCX1mlNqgY\n46Y2Fd5l4cOhhFn4beecY13DVezE/3Pn0EZcHQWh5uvvNOifJrKT3mWhD3+lLs36\nMGpFjLHbhGdO3reVqXcT0svGApFrYsn+DrwGQ/ECgYEAtM+5hWSUn73UY5vcTjFZ\nxBCyY1AjEot7KRwAYRIkZr6ZPI8Ehlt0Ni0CRAX4i/Ho/pcKNUgWeTvU55heoJhC\nD5jP1m+p+TmPG+zN3FANYum8z1JBRwtICRxoaYPM2JXktIVMLJACtk5SJmpZ8YtK\nGKPBEXZ+WSHE/hnL68Ictx8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "saahil-test@hackville2025.iam.gserviceaccount.com",
+  "client_id": "105283542680894270544",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/saahil-test%40hackville2025.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

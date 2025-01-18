@@ -1,0 +1,173 @@
+/* General App layout */
+.app {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #a2a2a2;
+  overflow-y: hidden; /* Prevents scroll bars from appearing */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 20%;
+  height: 100vh; /* Full viewport height */
+  background-color: #d0dfe1;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.sidebar hr {
+  width: 150px;
+  height: 1px;
+  border-top: 1px solid black;
+  color: black;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+  color: black;
+  font-family: 'Hedvig Letters Serif'; /* Assuming you have this font available */
+  text-align: left;
+}
+
+.sidebar p {
+  color: black; 
+  text-align: left;
+}
+
+.sidebar button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #0056b3;
+}
+
+.sidebar button:active {
+  background-color: #10424f;
+  color: white;
+}
+
+.sidebar button:active {
+  background-color: #10424f;
+  color: white;
+}
+
+/* Content Area styles */
+.content {
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  flex-grow: 1; /* Allows content area to grow */
+}
+
+/* Title styles */
+.content h1 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: black;
+  text-align: left;
+}
+
+/* Tabs (buttons for switching between sections) */
+.tabs {
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.tabs button:active {
+  background-color: #0056b3;
+  color: white;
+}
+
+
+/* Key Takeaway content component styles */
+.key-takeaways-component-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.key-takeaways-component {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-subtitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 1.1em;
+  line-height: 1.5;
+}
+
+/* Optional: Add spacing or custom styles for tabs content if necessary */
+.content div {
+  margin-top: 20px;
+}
+
+.sidebar-buttons {
+  margin-top: 125px;  /* Pushes buttons to the bottom */
+  display: flex;
+  background-color: transparent;
+  flex-direction: column;
+  gap: 5px;         /* Adds space between buttons */
+}
+
+/* Style for profile and upload buttons */
+.sidebar-button {
+  display: flex;
+  padding: 15px;
+  background-color: transparent;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.sidebar-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.sidebar-button:active {
+  background-color: #0056b3;
+  color: white;
+}
+
+.sidebar-button img {
+  width: 20px;
+  height: 20px;
+  align-items: left;
+}
