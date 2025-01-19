@@ -1,24 +1,27 @@
 import React, { useState } from "react";
+import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hook
 import logo from "../assets/logo.png";
 import "../App.css";
 import GoogleButton from "react-google-button";
 
-// GoogleSignIn Component
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+
+  return <button className="button" onClick={() => loginWithRedirect()}>Sign In with Auth0</button>;
+};
+
 const GoogleSignIn = () => {
   const handleLogin = () => {
     console.log("Google Sign-In button clicked");
-    // Add logic for handling Google Sign-In (e.g., redirect to Google OAuth)
+    // Placeholder for Google OAuth logic if needed
   };
 
-  return (
-    <GoogleButton
-      onClick={handleLogin} // Function to execute on click
-    />
-  );
+  return <GoogleButton onClick={handleLogin} />;
 };
 
 // LoginPage Component
 export default function LoginPage() {
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0(); // Use Auth0 hooks
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -31,7 +34,7 @@ export default function LoginPage() {
 
   const handleLogin = () => {
     console.log("Login form submitted:", formData);
-    // Add your login logic here (e.g., API call)
+    // Placeholder for handling custom login logic
   };
 
   return (
@@ -45,44 +48,61 @@ export default function LoginPage() {
       </div>
 
       {/* Login form */}
-      <div className="login-form">
-        <h2>Login</h2>
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          value={formData.email}
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Enter your password"
-          value={formData.password}
-          onChange={handleInputChange}
-          required
-        />
-        <button className="button" onClick={handleLogin}>
-          Login
-        </button>
+      {!isAuthenticated ? (
+        <div className="login-form">
+          <h2>Login</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+            value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+          <button className="button" onClick={handleLogin}>
+            Login
+          </button>
 
-        {/* Google Sign-In */}
-        <GoogleSignIn />
+          {/* Google Sign-In */}
+          <GoogleSignIn />
 
-        {/* Divider with "or" */}
-        <div className="divider">
-          <span>or</span>
+          {/* Divider with "or" */}
+          <div className="divider">
+            <span>or</span>
+          </div>
+
+          {/* Auth0 Login */}
+          <LoginButton />
+
+          {/* Create Account button */}
+          <button
+            className="button"
+            onClick={() => (window.location.href = "/create-account")}
+          >
+            Create Account
+          </button>
         </div>
-
-        {/* Create Account button */}
-        <button
-          className="button"
-          onClick={() => (window.location.href = "/create-account")} // Navigate to Create Account page
-        >
-          Create Account
-        </button>
-      </div>
+      ) : (
+        <div className="profile-container">
+          <h2>Welcome, {user.name}!</h2>
+          <p>{user.email}</p>
+          <img src={user.picture} alt={user.name} />
+          <button
+            className="button"
+            onClick={() => logout({ returnTo: window.location.origin })}
+          >
+            Log Out
+          </button>
+        </div>
+      )}
     </div>
   );
 }
