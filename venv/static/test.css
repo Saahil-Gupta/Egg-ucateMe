@@ -1,0 +1,22 @@
+/* Add your styles here */
+.sidebar button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  .content {
+    padding: 20px;
+  }
+  .sidebar {
+    width: 200px;
+    float: left;
+    background: #f4f4f4;
+  }
+  .sidebar-button {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .sidebar-button img {
+    margin-right: 10px;
+  }
+  
