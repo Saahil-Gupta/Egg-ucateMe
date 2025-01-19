@@ -4,33 +4,23 @@ from pymongo import MongoClient
 from datetime import datetime, timezone
 import uuid
 import time
+import os
+from dotenv import load_dotenv
 from google.api_core.exceptions import DeadlineExceeded
 import random
+load_dotenv()
 
 # Replace with your MongoDB Atlas connection string
 client = MongoClient("mongodb+srv://spambot4673:Hackville2025@cluster0.b9vca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 db = client["transcriptions_db"]
 collection = db["transcripts"]
+filename_mapping_collection = db["filename_mapping"]
 
 # Configure Gemini API key
 genai.configure(api_key="AIzaSyCttWyeP598IhA8dcIxyh2j3F5I1qeyNho")  # Replace with your actual Gemini API key
 
 # Replace with your AssemblyAI API key
 aai.settings.api_key = "6a98833e3ea446de8815580edcbc7951"
-
-# Function to save transcript to MongoDB
-def save_transcript(file_name, transcript_text, summary_text=None):
-    transcript_id = str(uuid.uuid4())  # Generate a unique ID
-    transcript_data = {
-        "_id": transcript_id,
-        "file_name": file_name,
-        "transcript_text": transcript_text,
-        "summary_text": summary_text,
-        "created_at": datetime.now(timezone.utc),
-    }
-    collection.insert_one(transcript_data)
-    print(f"Transcript saved with ID: {transcript_id}")
-    return transcript_id
 
 # Function to transcribe audio using AssemblyAI
 def transcribe_audio(file_url):
@@ -56,8 +46,6 @@ def fetch_most_recent_transcript():
     else:
         print("No transcripts found in the database.")
         return None
-
-
 
 # Function to summarize the transcript using Gemini API
 def summarize_transcript_with_gemini(transcript_text):
@@ -132,7 +120,7 @@ def generate_flashcards_from_transcript(transcript_text):
 
 def get_answer_to_question(question, transcript_text):
     # Ask Gemini to provide an answer to the question based on the transcript
-    response = genai.generate_content(f"Answer the following question based on the transcript: {question} {transcript_text}")
+    response = genai.GenerativeModel("gemini-1.5-flash").generate_content(f"Answer the following question based on the transcript: {question} {transcript_text}")
     return response.text.strip()
 
 def get_definition(term):
@@ -160,6 +148,30 @@ def generate_key_takeaways_from_transcript(transcript_text):
     return key_takeaways  # Return the list of key takeaways
 
 
+# Function to save transcript to MongoDB
+def save_transcript(file_name, transcript_text, summary_text=None):
+    transcript_id = str(uuid.uuid4())  # Generate a unique ID
+    transcript_data = {
+        "_id": transcript_id,
+        "file_name": file_name,
+        "transcript_text": transcript_text,
+        "keyTakeaways": generate_key_takeaways_from_transcript(transcript_text),
+        "flashcardss": generate_flashcards_from_transcript(transcript_text),
+        "summary_text": summary_text,
+        "created_at": datetime.now(timezone.utc),
+    }
+    collection.insert_one(transcript_data)
+    print(f"Transcript saved with ID: {transcript_id}")
+    file_key = os.path.splitext(file_name)[0]  # Remove file extension from filename
+    filename_mapping_data = {
+        "filename": file_key,
+        "transcript_id": transcript_id
+    }
+    # Insert the mapping into the filename_mapping collection
+    filename_mapping_collection.insert_one(filename_mapping_data)
+    print(f"Filename '{file_key}' mapped to Transcript ID: {transcript_id}")
+    return transcript_id
+
 
 def process_uploaded_file(filepath):
     # Transcribe the audio using Google Speech-to-Text or AssemblyAI (whichever is being used)
@@ -172,7 +184,7 @@ def process_uploaded_file(filepath):
     flashcards = generate_flashcards_from_transcript(transcription)
 
     # Save the transcription to MongoDB (if needed)
-    save_to_db = save_transcript(filepath, transcription)
+    transcript_id = save_transcript(filepath, transcription)
     
     summaries = summarize_transcript_with_gemini(transcription)
 
@@ -182,11 +194,11 @@ def process_uploaded_file(filepath):
         "key_takeaways": key_takeaways,
         "flashcards": flashcards,
         "summary": summaries,
-        "transcript_id": save_to_db
+        "transcript_id": transcript_id
     }
 
 
-# # Example usage
+# Example usage
 # if __name__ == "__main__":
 #     transcribed_audio = transcribe_audio("videoplayback.mp4")
 #     save_to_db = save_transcript("videoplayback.mp4", transcribed_audio)

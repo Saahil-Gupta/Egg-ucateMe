@@ -1,8 +1,10 @@
 from pymongo import MongoClient
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # Replace with your MongoDB URI
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://spambot4673:Hackville2025@cluster0.b9vca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URL_KEY")
 
 # Create a MongoClient instance
 client = MongoClient(MONGO_URI)
