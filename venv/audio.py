@@ -11,16 +11,16 @@ import random
 load_dotenv()
 
 # Replace with your MongoDB Atlas connection string
-client = MongoClient("mongodb+srv://spambot4673:Hackville2025@cluster0.b9vca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+client = MongoClient("MongoDB")
 db = client["transcriptions_db"]
 collection = db["transcripts"]
 filename_mapping_collection = db["filename_mapping"]
 
 # Configure Gemini API key
-genai.configure(api_key="AIzaSyCttWyeP598IhA8dcIxyh2j3F5I1qeyNho")  # Replace with your actual Gemini API key
+genai.configure(api_key="GenAI_APIKey")  # Replace with your actual Gemini API key
 
 # Replace with your AssemblyAI API key
-aai.settings.api_key = "6a98833e3ea446de8815580edcbc7951"
+aai.settings.api_key = "ASSEMBLY_AI_API"
 
 # Function to transcribe audio using AssemblyAI
 def transcribe_audio(file_url):
