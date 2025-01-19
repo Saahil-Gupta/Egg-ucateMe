@@ -18,7 +18,7 @@ app.config['UPLOAD_FOLDER'] = 'venv/uploads'
 app.config['ALLOWED_EXTENSIONS'] = {'mp4', 'mp3', 'wav', 'pdf'}
 
 # MongoDB connection URI (replace with your MongoDB Atlas URI)
-MONGODB_URI = "mongodb+srv://spambot4673:Hackville2025@cluster0.b9vca.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGODB_URI = "MONGO URL"
 
 # Function to get MongoDB collection
 def get_collection(collection_name):
